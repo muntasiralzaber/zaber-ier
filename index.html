@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Muntasir Al Zaber — Education & Youth Development Professional</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,500;0,600;0,700;1,500&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#f5f2e8;
+    --paper-2:#ece7d8;
+    --ink:#20261f;
+    --ink-soft:#4a5347;
+    --green:#2f4a32;
+    --green-deep:#1c2e1e;
+    --gold:#b8862e;
+    --rule:#c9c2ab;
+    --sans: 'IBM Plex Sans', system-ui, sans-serif;
+    --serif: 'Lora', Georgia, serif;
+    box-sizing:border-box;
+    padding-top: env(safe-area-inset-top,0px);
+    padding-bottom: env(safe-area-inset-bottom,0px);
+  }
+  *{box-sizing:inherit;}
+  html{scroll-padding-top: env(safe-area-inset-top,0px);}
+  html,body{height:100%;}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:var(--sans);
+    line-height:1.55;
+    -webkit-font-smoothing:antialiased;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --paper:#1b1e18;
+      --paper-2:#242820;
+      --ink:#eee9da;
+      --ink-soft:#b9b6a6;
+      --green:#8fb996;
+      --green-deep:#c7dfc9;
+      --gold:#d9a94f;
+      --rule:#3c4136;
+    }
+  }
+  :root[data-theme="dark"]{
+    --paper:#1b1e18;
+    --paper-2:#242820;
+    --ink:#eee9da;
+    --ink-soft:#b9b6a6;
+    --green:#8fb996;
+    --green-deep:#c7dfc9;
+    --gold:#d9a94f;
+    --rule:#3c4136;
+  }
+
+  a{color:var(--green);}
+  ::selection{background:var(--gold);color:var(--green-deep);}
+
+  .wrap{
+    max-width:1180px;
+    margin:0 auto;
+    display:grid;
+    grid-template-columns: 320px 1fr;
+    min-height:100%;
+  }
+
+  /* ---------- Sidebar ---------- */
+  aside{
+    background:var(--green-deep);
+    color:#f2efe4;
+    padding:56px 40px 48px;
+    position:sticky;
+    top:0;
+    align-self:start;
+    min-height:100vh;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]) aside{ background:#141712; }
+  }
+  :root[data-theme="dark"] aside{ background:#141712; }
+
+  .name{
+    font-family:var(--serif);
+    font-weight:600;
+    font-size:2rem;
+    line-height:1.15;
+    margin:0 0 6px;
+    letter-spacing:0.2px;
+  }
+  .role{
+    color:var(--gold);
+    font-size:0.95rem;
+    font-style:italic;
+    font-family:var(--serif);
+    margin:0 0 28px;
+  }
+  .contact{
+    list-style:none;
+    padding:0;
+    margin:0 0 40px;
+    font-size:0.88rem;
+    color:#d7d3c2;
+    display:flex;
+    flex-direction:column;
+    gap:8px;
+    border-top:1px solid rgba(242,239,228,0.18);
+    padding-top:20px;
+  }
+  .contact a{color:#d7d3c2;text-decoration:none;}
+  .contact a:hover{color:var(--gold);}
+
+  .side-h{
+    font-family:var(--serif);
+    font-style:italic;
+    font-size:0.98rem;
+    color:var(--gold);
+    margin:0 0 14px;
+    padding-bottom:8px;
+    border-bottom:1px solid rgba(242,239,228,0.18);
+  }
+  .side-block{margin-bottom:36px;}
+
+  .edu-item{margin-bottom:16px;}
+  .edu-item:last-child{margin-bottom:0;}
+  .edu-deg{font-size:0.9rem;font-weight:600;color:#f2efe4;}
+  .edu-gpa{color:var(--gold);font-weight:400;}
+  .edu-school{font-size:0.82rem;color:#b9b6a2;margin-top:2px;}
+
+  .tag-group{margin-bottom:16px;}
+  .tag-group:last-child{margin-bottom:0;}
+  .tag-label{font-size:0.75rem;text-transform:none;color:#b9b6a2;margin-bottom:6px;}
+  .tags{display:flex;flex-wrap:wrap;gap:6px;}
+  .tag{
+    font-size:0.78rem;
+    padding:4px 10px;
+    border:1px solid rgba(242,239,228,0.28);
+    border-radius:2px;
+    color:#e6e2d2;
+  }
+
+  /* ---------- Main ---------- */
+  main{padding:56px 48px 80px;}
+  section{margin-bottom:56px;}
+  section:last-child{margin-bottom:0;}
+
+  .lede{
+    font-family:var(--serif);
+    font-size:1.28rem;
+    line-height:1.6;
+    color:var(--ink);
+    max-width:62ch;
+    margin:0 0 8px;
+  }
+  .lede + .sub{color:var(--ink-soft);font-size:0.92rem;}
+
+  h2.h{
+    font-family:var(--serif);
+    font-weight:600;
+    font-size:1.32rem;
+    color:var(--green);
+    margin:0 0 24px;
+    display:flex;
+    align-items:baseline;
+    gap:14px;
+  }
+  h2.h::after{
+    content:"";
+    flex:1;
+    border-bottom:1px solid var(--rule);
+  }
+
+  .comp{
+    margin-bottom:22px;
+    padding-left:18px;
+    border-left:2px solid var(--rule);
+  }
+  .comp:last-child{margin-bottom:0;}
+  .comp h3{
+    font-family:var(--serif);
+    font-size:1.02rem;
+    font-weight:600;
+    margin:0 0 5px;
+    color:var(--ink);
+  }
+  .comp p{margin:0;color:var(--ink-soft);font-size:0.92rem;max-width:66ch;}
+
+  .job{
+    position:relative;
+    padding:0 0 30px 26px;
+    border-left:2px solid var(--rule);
+  }
+  .job:last-child{padding-bottom:0;}
+  .job::before{
+    content:"";
+    position:absolute;
+    left:-6px;
+    top:4px;
+    width:10px;
+    height:10px;
+    background:var(--gold);
+    border-radius:50%;
+  }
+  .job-top{
+    display:flex;
+    flex-wrap:wrap;
+    align-items:baseline;
+    gap:8px 14px;
+    margin-bottom:6px;
+  }
+  .job-title{font-family:var(--serif);font-weight:600;font-size:1.06rem;color:var(--ink);}
+  .job-org{color:var(--green);font-size:0.92rem;}
+  .job-date{
+    margin-left:auto;
+    font-size:0.82rem;
+    color:var(--ink-soft);
+    font-variant-numeric:tabular-nums;
+    white-space:nowrap;
+  }
+  .job ul{margin:8px 0 0;padding-left:18px;color:var(--ink-soft);font-size:0.92rem;}
+  .job li{margin-bottom:5px;}
+
+  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:36px;}
+  .col h3{
+    font-family:var(--serif);
+    font-size:0.95rem;
+    font-style:italic;
+    color:var(--green);
+    margin:0 0 10px;
+  }
+  .col ul{margin:0;padding-left:18px;color:var(--ink-soft);font-size:0.9rem;}
+  .col li{margin-bottom:6px;}
+
+  .award-cat{margin-bottom:20px;}
+  .award-cat:last-child{margin-bottom:0;}
+  .award-cat h3{
+    font-family:var(--serif);font-style:italic;font-size:0.95rem;
+    color:var(--green);margin:0 0 10px;
+  }
+  .award-cat ul{margin:0;padding-left:18px;color:var(--ink-soft);font-size:0.9rem;}
+  .award-cat li{margin-bottom:6px;}
+
+  .refs{display:grid;grid-template-columns:1fr 1fr;gap:24px;}
+  .ref-card{
+    background:var(--paper-2);
+    border:1px solid var(--rule);
+    padding:18px 20px;
+  }
+  .ref-card h3{font-family:var(--serif);font-size:0.98rem;margin:0 0 4px;color:var(--ink);}
+  .ref-card .ref-title{font-size:0.84rem;color:var(--ink-soft);margin-bottom:10px;}
+  .ref-card .ref-contact{font-size:0.84rem;color:var(--green);}
+
+  footer{
+    padding:28px 48px 48px;
+    font-size:0.8rem;
+    color:var(--ink-soft);
+    border-top:1px solid var(--rule);
+  }
+
+  /* Responsive */
+  @media (max-width: 860px){
+    .wrap{grid-template-columns:1fr;}
+    aside{position:relative;min-height:auto;padding:40px 28px;}
+    main{padding:40px 24px 60px;}
+    .grid2, .refs{grid-template-columns:1fr;}
+    .job-date{margin-left:0;}
+  }
+
+  :focus-visible{outline:2px solid var(--gold);outline-offset:3px;}
+  @media (prefers-reduced-motion: reduce){*{scroll-behavior:auto !important;}}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <aside>
+    <p class="name">Muntasir<br>Al&nbsp;Zaber</p>
+    <p class="role">Education &amp; Youth Development Professional</p>
+
+    <ul class="contact">
+      <li>Shahbagh, Dhaka, Bangladesh</li>
+      <li><a href="tel:+8801568587088">01568587088</a></li>
+      <li><a href="mailto:muntasiralzaber@gmail.com">muntasiralzaber@gmail.com</a></li>
+    </ul>
+
+    <div class="side-block">
+      <p class="side-h">Education</p>
+      <div class="edu-item">
+        <div class="edu-deg">B.Ed. (Bachelor of Education) <span class="edu-gpa">— CGPA 3.58</span></div>
+        <div class="edu-school">Institute of Education and Research, University of Dhaka</div>
+      </div>
+      <div class="edu-item">
+        <div class="edu-deg">Higher Secondary Certificate <span class="edu-gpa">— GPA 5.00</span></div>
+        <div class="edu-school">Barishal Cadet College</div>
+      </div>
+      <div class="edu-item">
+        <div class="edu-deg">Secondary School Certificate <span class="edu-gpa">— GPA 5.00</span></div>
+        <div class="edu-school">Barishal Cadet College</div>
+      </div>
+    </div>
+
+    <div class="side-block">
+      <p class="side-h">Skills</p>
+      <div class="tag-group">
+        <div class="tag-label">Languages</div>
+        <div class="tags"><span class="tag">English</span><span class="tag">Bangla</span></div>
+      </div>
+      <div class="tag-group">
+        <div class="tag-label">Software &amp; technical</div>
+        <div class="tags">
+          <span class="tag">MS Word</span><span class="tag">Excel</span>
+          <span class="tag">PowerPoint</span><span class="tag">Access</span>
+          <span class="tag">DBMS</span><span class="tag">Programming basics</span>
+        </div>
+      </div>
+      <div class="tag-group">
+        <div class="tag-label">Professional</div>
+        <div class="tags">
+          <span class="tag">Digital marketing</span><span class="tag">Social media marketing</span>
+          <span class="tag">Team coordination</span><span class="tag">Public speaking</span>
+          <span class="tag">Stakeholder engagement</span>
+        </div>
+      </div>
+    </div>
+  </aside>
+
+  <main>
+
+    <section id="summary">
+      <p class="lede">A result-oriented education and coordination professional, with hands-on experience across teaching, academic facilitation, student support, and marketing in school, EdTech, and admission-coaching environments.</p>
+      <p class="sub">Skilled in team coordination, content facilitation, and stakeholder communication, with a record of leadership through competitive and organizational roles at institutional and university level. Seeking to bring strong organizational, communication, and people-management skills to a corporate setting.</p>
+    </section>
+
+    <section id="competencies">
+      <h2 class="h">Core Skills</h2>
+      <div class="comp">
+        <h3>Analytical thinking &amp; problem-solving</h3>
+        <p>Analyzes complex situations, identifies challenges, and develops practical solutions through structured thinking, research, and evidence-based decision-making.</p>
+      </div>
+      <div class="comp">
+        <h3>Project management &amp; organization</h3>
+        <p>Plans, coordinates, and manages multiple tasks while maintaining attention to detail and meeting deadlines — organizing resources and monitoring progress toward successful execution.</p>
+      </div>
+      <div class="comp">
+        <h3>Communication &amp; stakeholder engagement</h3>
+        <p>Communicates ideas clearly with diverse groups through professional writing, presentations, and interpersonal interaction; builds relationships and facilitates collaboration.</p>
+      </div>
+      <div class="comp">
+        <h3>Leadership &amp; team collaboration</h3>
+        <p>Works effectively within multidisciplinary teams, supports collective goals, and takes initiative to coordinate activities toward shared objectives.</p>
+      </div>
+    </section>
+
+    <section id="experience">
+      <h2 class="h">Professional Experience</h2>
+
+      <div class="job">
+        <div class="job-top">
+          <span class="job-title">Teacher</span>
+          <span class="job-org">Science Tutor Point</span>
+          <span class="job-date">2022 – 2026</span>
+        </div>
+        <ul>
+          <li>Delivered structured science lessons across multiple grade levels, adapting methods to varied learning paces and consistently improving class performance and engagement.</li>
+          <li>Managed lesson planning, assessment, and progress tracking independently over a multi-year tenure, reflecting strong subject command and long-term reliability.</li>
+        </ul>
+      </div>
+
+      <div class="job">
+        <div class="job-top">
+          <span class="job-title">QnA Coordinator</span>
+          <span class="job-org">Udvash Academic and Admission Care</span>
+          <span class="job-date">2025</span>
+        </div>
+        <ul>
+          <li>Coordinated academic query resolution for large student cohorts, ensuring accurate, timely responses and maintaining service quality standards.</li>
+          <li>Liaised between subject specialists and students, streamlining the query pipeline and improving turnaround time for academic support.</li>
+        </ul>
+      </div>
+
+      <div class="job">
+        <div class="job-top">
+          <span class="job-title">Education Facilitator</span>
+          <span class="job-org">Mojaru EdTech Platform</span>
+          <span class="job-date">2025</span>
+        </div>
+        <ul>
+          <li>Facilitated structured online learning sessions, guiding students through course content and resolving conceptual difficulties in real time.</li>
+          <li>Supported curriculum delivery and learner engagement on a digital platform, contributing to improved course completion and satisfaction.</li>
+        </ul>
+      </div>
+
+      <div class="job">
+        <div class="job-top">
+          <span class="job-title">Intern Teacher — Mathematics &amp; Science</span>
+          <span class="job-org">Dhaka Govt. Badhir High School</span>
+          <span class="job-date">2025</span>
+        </div>
+        <ul>
+          <li>Co-taught Mathematics and Science to hearing-impaired students, adapting instructional techniques and materials to an inclusive, specialized classroom setting.</li>
+          <li>Gained practical experience in inclusive pedagogy, classroom management, and lesson delivery under close mentorship from senior faculty.</li>
+        </ul>
+      </div>
+
+      <div class="job">
+        <div class="job-top">
+          <span class="job-title">Marketing Executive</span>
+          <span class="job-org">ABCL IT and Training Institute</span>
+          <span class="job-date">2024</span>
+        </div>
+        <ul>
+          <li>Executed marketing and outreach campaigns to drive course enrollment, combining digital promotion with direct student engagement.</li>
+          <li>Contributed to brand visibility and lead generation through social media marketing and on-ground promotional activities.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="leadership">
+      <h2 class="h">Leadership &amp; Extracurricular</h2>
+      <div class="grid2">
+        <div class="col">
+          <h3>Barishal Cadet College</h3>
+          <ul>
+            <li>Recognized as Best in Anchoring and Public Speaking.</li>
+            <li>Active member — General Knowledge Club, Debating Club, Azan &amp; Qiraat Club, Extempore Speech Club.</li>
+            <li>Member, Indoor Games Committee (Table Tennis) and Outdoor Games Committee (Basketball, Football, Cricket).</li>
+            <li>Organized the Current Affairs Display Competition and the Wall Magazine Competition.</li>
+          </ul>
+        </div>
+        <div class="col">
+          <h3>University of Dhaka (IER)</h3>
+          <ul>
+            <li>Captain, IER Basketball Team.</li>
+            <li>Manager, IER Inter-Stream Sports Tournament 2025, DU.</li>
+            <li>Executive Member, Dhaka University Nasheed Society (DUNS).</li>
+            <li>Event Organizer, Pedagogy Squad of Muhsin Hall (PSM).</li>
+            <li>Player, Muhsin Hall Football Team, DU.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="awards">
+      <h2 class="h">Achievements &amp; Awards</h2>
+      <div class="grid2">
+        <div class="award-cat">
+          <h3>On-stage performance</h3>
+          <ul>
+            <li>Champion, Inter-House Current Affairs Display Competition (2019).</li>
+            <li>Champion, Inter-House Annual Wall Magazine Competition (2019).</li>
+            <li>Runner-up, Inter-House Bangla Debate Competition (2018).</li>
+            <li>Second Runner-up, Inter-House Azan and Qiraat Competition (2018).</li>
+          </ul>
+        </div>
+        <div class="award-cat">
+          <h3>Athletic record</h3>
+          <ul>
+            <li>Champion, Inter-House Basketball Competition (2020).</li>
+            <li>Champion, Intra-Hall Football Tournament, Muhsin Hall, University of Dhaka (2025).</li>
+            <li>Runner-up, Inter-Stream Football Tournament, University of Dhaka (2024 and 2025).</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="references">
+      <h2 class="h">References</h2>
+      <div class="refs">
+        <div class="ref-card">
+          <h3>Dr. Asim Das</h3>
+          <div class="ref-title">Associate Professor, Institute of Education and Research (IER), University of Dhaka</div>
+          <div class="ref-contact">+8801774736858 · asim.ier@du.ac.bd</div>
+        </div>
+        <div class="ref-card">
+          <h3>Md. Aminul Islam</h3>
+          <div class="ref-title">Headmaster, Dhaka Govt. Badhir High School</div>
+          <div class="ref-contact">dbhschoolbd@gmail.com</div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+</div>
+
+<footer>Muntasir Al Zaber — Education &amp; Youth Development Professional · Dhaka, Bangladesh</footer>
+
+</body>
+</html>
